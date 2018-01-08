@@ -3,10 +3,10 @@ clear all;
 close all;
 
 global IMAGE;
-
+global nbImg = 1;
   
-  M=V2Matrice();
-  Imoy = visageMoyen();
+M=V2Matrice();
+Imoy = visageMoyen();
 
 f=figure('name', 'Reconnaissance faciale', 'numberTitle', 'off');
 
@@ -36,3 +36,4 @@ uicontrol(rchPanel, 'style', 'text', 'string','Choisir methode :','position',[20
 #uicontrol(rchPanel, 'style', 'pushbutton', 'string', 'Euclidienne','position', [ 50 30 80 30], 'callback', 'euclidienne(Imoy,M)','backgroundcolor','red','foregroundcolor', 'white');
 #uicontrol(rchPanel, 'style', 'pushbutton', 'string', 'Bhattacharyya','position', [ 50 30 80 30], 'callback', 'bhattacharyya(Imoy,M)','backgroundcolor','red','foregroundcolor', 'white');
 #uicontrol(rchPanel, 'style', 'pushbutton', 'string', 'Chi Square','position', [ 50 30 80 30], 'callback', 'chiSquare(Imoy,M)','backgroundcolor','red','foregroundcolor', 'white');
+uicontrol(rchPanel, 'style', 'pushbutton', 'string', 'EigenFaces','position', [ 50 30 80 30], 'callback', 'EigenFaces(M)','backgroundcolor','red','foregroundcolor', 'white');

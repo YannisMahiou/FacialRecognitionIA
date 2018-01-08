@@ -1,4 +1,4 @@
-function bhattacharyya(moy,M)
+function chiSquare(moy,M)
   global IMAGE;
   global nbImg;
   
@@ -8,11 +8,11 @@ function bhattacharyya(moy,M)
   IMAGE=I2Vector(IMAGE);
   [nbElt, centreBin] = hist(IMAGE,ax);
   
-  tab=tableDistanceBhattacharyya(nbElt,M,ax);
+  tab=tableDistanceChi2(nbElt,M,ax);
   [tab,ind]=sort(tab);    
   IMAGE=Vector2I(IMAGE);
   p=uipanel('title','Resultats','position', [0 0 1 .5]);
-  for i=1:nbImg
+   for i=1:nbImg
       img=["./Visages/ztest" num2str(ind(i)) ".gif"];
       R=imread(img);
       subplot(1,nbImg,i,'Parent', p);  
